@@ -47,14 +47,11 @@
         }
         .main-title {
             letter-spacing: 0.1em;
+            /* font-size was removed from here and added to the h1 tag for responsiveness */
         }
-	    <h1 class="font-chiller text-red-500 text-glow-red main-title">Sinister</h1>
-	    <h1 class="font-chiller text-red-500 text-glow-red main-title text-5xl md:text-7xl lg:text-8xl">Sinister</h1>
-        
-	.subtitle {
+        .subtitle {
              letter-spacing: 0.05em;
         }
-        /* Styling for the new Gemini feature */
         #story-button {
             transition: all 0.3s ease;
         }
@@ -83,25 +80,19 @@
 
     <div class="container mx-auto p-4 sm:p-8 max-w-7xl">
         
-        <!-- Main Header -->
-	<header class="text-center mb-8">
- 	   <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
- 	 	<img src="FordPerformance_Coyote_v1.2.png" alt="Sinister Logo" class="rounded-xl w-1/2 h-auto object-cover card-shadow"
-       onerror="this.onerror=null; this.src='https://placehold.co/600x400/111827/FFFFFF?text=Sinister+Logo';">
- 	   </div>
-			<h2 class="font-orbitron text-2xl md:text-3xl font-semibold uppercase text-gray-300 mt-2 subtitle">2019 Ford Mustang GT</h2>
-		</header>
+        <header class="text-center mb-12">
+            <h1 class="font-chiller text-red-500 text-glow-red main-title text-6xl sm:text-7xl md:text-8xl lg:text-9xl">Sinister</h1>
+            <h2 class="font-orbitron text-2xl md:text-3xl font-semibold uppercase text-gray-300 mt-2 subtitle">2019 Ford Mustang GT</h2>
+        </header>
 
         <main class="grid grid-cols-1 lg:grid-cols-5 gap-6">
 
-            <!-- Left Column: Specs -->
             <div class="lg:col-span-3 space-y-6">
                 
-                <!-- Powertrain -->
                 <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
                     <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">POWERTRAIN</h3>
                     <ul class="list-disc list-inside space-y-3 text-lg text-gray-200">                        
-			<li>3.0L Whipple Supercharged 5.0 Coyote V8 w/ 132mm TB</li>
+                        <li>3.0L Whipple Supercharged 5.0 Coyote V8 w/ 132mm TB</li>
                         <li>L&M Aftermarket 4 Cam Set</li>
                         <li>Upgraded Fuel Rails & ID1050x Injectors</li>
                         <li>Full Corsa Xtreme Active Exhaust w/ Full Length Headers & Double H-Pipe</li>
@@ -109,7 +100,6 @@
                     </ul>
                 </section>
                 
-                <!-- Drivetrain & Powertrain -->
                 <div class="grid md:grid-cols-2 gap-6">
                     <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
                         <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">DRIVETRAIN</h3>
@@ -121,37 +111,34 @@
                         </ul>
                     </section>
                     <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
-                        <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">POWERTRAIN</h3>
+                        <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">SUSPENSION</h3>
                         <ul class="list-disc list-inside space-y-3 text-lg text-gray-200">
                             <li>Ford Performance Package</li>
-			    <li>Ford Performance Axels</li>
+                            <li>Ford Performance Axels</li>
                             <li>Ford Performance Lowering Springs</li>
                             <li>BMR Rear Suspension w/ Cradle Lockouts</li>
                         </ul>
                     </section>
                 </div>
                 
-		<!-- Interior & Sound -->
                 <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
                     <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">INTERIOR & SOUND</h3>
                      <ul class="list-disc list-inside space-y-3 text-lg text-gray-200">
                         <li>Custom Gauges w/Forscan Mods</li>
                         <li>Custom Logo and Centerscreen Graphics</li>
-			<li>Sundown Audio 1,500w Class D Amplifier w/Matched 12" Woofers</li>
+                        <li>Sundown Audio 1,500w Class D Amplifier w/Matched 12" Woofers</li>
                     </ul>
                 </section>
 
-                <!-- Exterior & Wheels -->
                 <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
                     <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">EXTERIOR & WHEELS</h3>
                      <ul class="list-disc list-inside space-y-3 text-lg text-gray-200">
                         <li>Full Carbon Fiber Terminator Hood by VIS Racing</li>
                         <li>P51 Wheels with Nitto NT 555 G2 Tires</li>
-			<li>PowerStop Rotors and Ceramic Pads</li>
+                        <li>PowerStop Rotors and Ceramic Pads</li>
                     </ul>
                 </section>
 
-                <!-- Special Thanks -->
                 <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
                     <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">SPECIAL THANKS</h3>
                      <ul class="list-disc list-inside space-y-3 text-lg text-gray-200">
@@ -161,47 +148,43 @@
                     </ul>
                 </section>
 
-<!-- Gemini Story Section -->
                 <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
                     <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">✨ What does Sinister sound like?</h3>
                     <div class="text-center">
-                        <audio id="mySound" src="cammed_idle_audio.mp3"></audio>
-			<button id="Cammed-Idle" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg text-lg card-shadow" button class="action-button start" onclick="document.getElementById('mySound').play()">
-                            ✨ Play!
+                        <audio id="mySound" src="assets/cammed_idle_audio.mp3" preload="none"></audio>
+                        <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg text-lg card-shadow transition-transform hover:scale-105" onclick="document.getElementById('mySound').play()">
+                            ▶ Play Idle
                         </button>
-			<button id="Cammed-Idle" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg text-lg card-shadow" button class="action-button stop" onclick="document.getElementById('mySound').pause(); 						document.getElementById('mySound').currentTime = 0;">
-                            ✨ Pause!
+                        <button class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg text-lg card-shadow transition-transform hover:scale-105" onclick="document.getElementById('mySound').pause(); document.getElementById('mySound').currentTime = 0;">
+                            ■ Stop
                         </button>
-
                     </div>
-                    <div id="loader-container" class="flex justify-center mt-4 hidden">
-                        <div class="loader"></div>
-                    </div>
-                    <div id="story-container" class="mt-4 text-lg text-gray-300 prose prose-invert max-w-none"></div>
                 </section>
 
             </div>
-            <!-- Right Column: Images -->
-		<div class="lg:col-span-2 space-y-6">
+            
+            <div class="lg:col-span-2 space-y-6">
+                <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
+                    <img src="assets/Sinister_Simple.png" alt="Sinister Mustang front view" class="rounded-xl w-full h-auto object-cover card-shadow"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/111827/FFFFFF?text=Sinister+Car';">
+                </div>
 
-   		<div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
-        		<img src="Sinister_Simple.png" alt="Sinister Mustang front view" class="rounded-xl w-full h-auto object-cover card-shadow"
-             		onerror="this.onerror=null; this.src='https://placehold.co/600x400/111827/FFFFFF?text=Sinister+Car';">
-    		</div>
+                <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
+                    <img src="assets/Engine_View.png" alt="Engine View" class="rounded-xl w-full h-auto object-cover card-shadow"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/111827/FFFFFF?text=Engine+View';">
+                </div>
 
-    		<div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
-        		<img src="Engine_View.png" alt="Engine View" class="rounded-xl w-full h-auto object-cover card-shadow"
-             		onerror="this.onerror=null; this.src='https://placehold.co/600x400/111827/FFFFFF?text=Engine+View';">
-    		</div>
+                <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
+                    <img src="assets/Cam_Teardown.png" alt="Engine Assembly" class="rounded-xl w-full h-auto object-cover card-shadow"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/111827/FFFFFF?text=Cam+Teardown';">
+                </div>
 
-    		<div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
-        		<img src="Cam_Teardown.png" alt="Engine Assembly" class="rounded-xl w-full h-auto object-cover card-shadow"
-             		onerror="this.onerror=null; this.src='https://placehold.co/600x400/111827/FFFFFF?text=Cam+Teardown';">
-    		</div>
-
-    		<div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
-        		<img src="Interior_View.png"" alt="Interior" class="rounded-xl w-full h-auto object-cover card-shadow"
-             		onerror="this.onerror=null; this.src='https://placehold.co/600x400/111827/FFFFFF?text=Interior';">
-    		</div>
-
-</div>
+                <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
+                    <img src="assets/Interior_View.png" alt="Interior" class="rounded-xl w-full h-auto object-cover card-shadow"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/111827/FFFFFF?text=Interior';">
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
