@@ -13,38 +13,162 @@
             font-family: 'Chiller';
             src: url('assets/fonts/chiller.woff2') format('woff2');
         }
-
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark Gray */
+            color: #F3F4F6; /* Light Gray */
+        }
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .font-chiller {
+            font-family: 'Chiller', 'Orbitron', sans-serif; /* Fallback font */
+            font-weight: bold;
+        }
+        /* Custom red text shadow for a subtle glow effect */
+        .text-glow-red {
+            text-shadow: 0 0 8px rgba(239, 68, 68, 0.6), 0 0 10px rgba(239, 68, 68, 0.4);
+        }
+        /* Custom box shadow for a card-like effect */
+        .card-shadow {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 3px rgba(255, 255, 255, 0.1);
+        }
+        /* Custom gradient border effect */
+        .gradient-border {
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            border-image: linear-gradient(145deg, #4B5563, #1F2937, #4B5563) 1;
+        }
+        .main-title {
+            letter-spacing: 0.1em;
+        }
+        .subtitle {
+             letter-spacing: 0.05em;
+		<h1 class="font-chiller text-red-500 text-glow-red main-title">Sinister</h1>
+		<h1 class="font-chiller text-red-500 text-glow-red main-title text-5xl md:text-7xl lg:text-8xl">Sinister</h1>
+        }
+        #story-button {
+            transition: all 0.3s ease;
+        }
+        #story-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
+        #story-container p {
+            margin-bottom: 1rem;
+        }
+        .loader {
+            border: 4px solid #f3f3f330;
+            border-radius: 50%;
+            border-top: 4px solid #ef4444;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
+
 <body class="antialiased">
 
     <div class="container mx-auto p-4 sm:p-8 max-w-7xl">
         
         <header class="text-center mb-8">
             <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
-                <img src="assets/images/FordPerformance_Coyote_v1.2.jpg" alt="Sinister Logo" class="rounded-xl w-1/2 h-auto object-cover card-shadow">
+                <img src="assets/images/FordPerformance_Coyote_v1.2.png" alt="Sinister Logo" class="rounded-xl w-1/2 h-auto object-cover card-shadow">
             </div>
             <h1 class="font-chiller text-red-500 text-glow-red main-title text-5xl md:text-7xl lg:text-8xl">Sinister</h1>
             <h2 class="font-orbitron text-2xl md:text-3xl font-semibold uppercase text-gray-300 mt-2 subtitle">2019 Ford Mustang GT</h2>
         </header>
+
+
+        <main class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+
+            <!-- Left Column: Specs -->
+            <div class="lg:col-span-3 space-y-6">
+                
+                <!-- Powertrain -->
+                <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
+                    <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">POWERTRAIN</h3>
+                    <ul class="list-disc list-inside space-y-3 text-lg text-gray-200">                        
+			<li>3.0L Whipple Supercharged 5.0 Coyote V8 w/ 132mm TB</li>
+                        <li>L&M Aftermarket 4 Cam Set</li>
+                        <li>Upgraded Fuel Rails & ID1050x Injectors</li>
+                        <li>Full Corsa Xtreme Active Exhaust w/ Full Length Headers & Double H-Pipe</li>
+                        <li>Tuned by Lund Racing</li>
+                    </ul>
+                </section>
+                
+                <!-- Drivetrain & Powertrain -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
+                        <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">DRIVETRAIN</h3>
+                        <ul class="list-disc list-inside space-y-3 text-lg text-gray-200">
+                            <li>Mantic Twin Disc Clutch</li>
+                            <li>QA1 Carbon Fiber Driveshaft w/Safety Loop</li>
+                            <li>MGW Short Throw Shifter</li>
+                            <li>Raceseng Rondure Weighted Shift Knob</li>
+                        </ul>
+                    </section>
+                    <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
+                        <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">POWERTRAIN</h3>
+                        <ul class="list-disc list-inside space-y-3 text-lg text-gray-200">
+                            <li>Ford Performance Package</li>
+			    <li>Ford Performance Axels</li>
+                            <li>Ford Performance Lowering Springs</li>
+                            <li>BMR Rear Suspension w/ Cradle Lockouts</li>
+                        </ul>
+                    </section>
+                </div>
+                
+		<!-- Interior & Sound -->
+                <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
+                    <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">INTERIOR & SOUND</h3>
+                     <ul class="list-disc list-inside space-y-3 text-lg text-gray-200">
+                        <li>Custom Gauges w/Forscan Mods</li>
+                        <li>Custom Logo and Centerscreen Graphics</li>
+			<li>Sundown Audio 1,500w Class D Amplifier w/Matched 12" Woofers</li>
+                    </ul>
+                </section>
+
+                <!-- Exterior & Wheels -->
+                <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
+                    <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">EXTERIOR & WHEELS</h3>
+                     <ul class="list-disc list-inside space-y-3 text-lg text-gray-200">
+                        <li>Full Carbon Fiber Terminator Hood by VIS Racing</li>
+                        <li>P51 Wheels with Nitto NT 555 G2 Tires</li>
+			<li>PowerStop Rotors and Ceramic Pads</li>
+                    </ul>
+                </section>
+
+                <!-- Special Thanks -->
+                <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
+                    <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">SPECIAL THANKS</h3>
+                     <ul class="list-disc list-inside space-y-3 text-lg text-gray-200">
+                        <li><strong>Build:</strong> The Snake Pit</li>
+                        <li><strong>Exhaust:</strong> Corsa Performance</li>
+                        <li><strong>Headrests & Console:</strong> Anderson Custom Interiors</li>
+                    </ul>
+                </section>
 
         <div class="lg:col-span-2 space-y-6">
             <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
                 <img src="assets/images/Sinister_Simple.png" alt="Sinister Mustang front view" class="rounded-xl w-full h-auto object-cover card-shadow">
             </div>
             <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
-                <img src="assets/images/Engine_View.jpg" alt="Engine View" class="rounded-xl w-full h-auto object-cover card-shadow">
+                <img src="assets/images/Engine_View.png" alt="Engine View" class="rounded-xl w-full h-auto object-cover card-shadow">
             </div>
             <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
-                <img src="assets/images/Cam_Teardown.jpg" alt="Engine Assembly" class="rounded-xl w-full h-auto object-cover card-shadow">
+                <img src="assets/images/Cam_Teardown.png" alt="Engine Assembly" class="rounded-xl w-full h-auto object-cover card-shadow">
             </div>
             <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
-                <img src="assets/images/Interior_View.jpg" alt="Interior" class="rounded-xl w-full h-auto object-cover card-shadow">
+                <img src="assets/images/Interior_View.png" alt="Interior" class="rounded-xl w-full h-auto object-cover card-shadow">
             </div>
         </div>
-        ```
 
-```html
 <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
     <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">What does Sinister sound like?</h3>
     <div class="text-center">
