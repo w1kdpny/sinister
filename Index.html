@@ -150,6 +150,7 @@
                     </ul>
                 </section>
 
+<<<<<<< Updated upstream
                 <section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
                     <h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">✨ What does Sinister sound like?</h3>
                     <div class="text-center">
@@ -190,3 +191,48 @@
     </div>
 </body>
 </html>
+=======
+<script>
+    // Simple and clean event listeners for audio buttons
+    const mySound = document.getElementById('mySound');
+    document.getElementById('playButton').addEventListener('click', () => {
+        mySound.play();
+    });
+    document.getElementById('pauseButton').addEventListener('click', () => {
+        mySound.pause();
+        mySound.currentTime = 0; // Optional: Resets audio to the beginning
+    });
+</script>
+
+	<!-- Right Column: Images -->
+        <div class="lg:col-span-2 space-y-6">
+            <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
+                <img src="assets/images/Sinister_Simple.png" alt="Sinister Mustang front view" class="rounded-xl w-full h-auto object-cover card-shadow">
+            </div>
+            <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
+                <img src="assets/images/Engine_View.png" alt="Engine View" class="rounded-xl w-full h-auto object-cover card-shadow">
+            </div>
+            <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
+                <img src="assets/images/Cam_Teardown.png" alt="Engine Assembly" class="rounded-xl w-full h-auto object-cover card-shadow">
+            </div>
+            <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow">
+                <img src="assets/images/Interior_View.png" alt="Interior" class="rounded-xl w-full h-auto object-cover card-shadow">
+            </div>
+        </div>
+
+	<section class="bg-gray-800/50 p-6 rounded-xl gradient-border card-shadow">
+    	<h3 class="font-orbitron text-2xl font-bold text-red-400 border-b-2 border-red-500/30 pb-2 mb-4">What does Sinister sound like?</h3>
+    	<div class="text-center">
+        	<audio id="mySound" src="assets/audio/cammed_idle_audio.mp3" preload="auto"></audio>
+        	<button id="playButton" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg text-lg card-shadow">
+            Play Idle Sound
+        	</button>
+        <button id="pauseButton" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg text-lg card-shadow">
+            Pause
+        </button>
+    </div>
+</section>
+
+
+<div>fonts from <a href="https://www.onlinewebfonts.com/icon">svg icons</a>is licensed by CC BY 4.0</div>
+>>>>>>> Stashed changes
