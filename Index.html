@@ -29,114 +29,108 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #050505; /* Darker Black/Gray for contrast */
+            background-color: #050505;
             color: #F3F4F6;
         }
         .font-orbitron {
             font-family: 'Orbitron', sans-serif;
         }
-        /* UPDATED: Increased size for readability since Chiller is thin */
         .font-chiller {
             font-family: 'Chiller', 'Orbitron', sans-serif; 
             font-weight: normal;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
         }
-        /* UPDATED: A stronger red glow to match the 'Sinister' vibe */
         .text-glow-red {
             text-shadow: 0 0 5px rgba(220, 38, 38, 0.8), 0 0 15px rgba(220, 38, 38, 0.4);
         }
         .card-shadow {
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 2px rgba(255, 255, 255, 0.05);
         }
-        /* UPDATED: Red border accents instead of gray */
         .gradient-border {
             border: 1px solid transparent;
             background-clip: padding-box;
             border-image: linear-gradient(180deg, #991b1b, #1f2937, #991b1b) 1; 
         }
-        .subtitle {
-             letter-spacing: 0.05em;
-        }
     </style>
 </head>
 <body class="antialiased selection:bg-red-900 selection:text-white">
 
-    <div class="container mx-auto p-4 sm:p-8 max-w-7xl">
+    <div class="container mx-auto px-4 py-6 max-w-7xl">
         
-        <header class="text-center mb-8">
-           <div class="bg-black p-4 rounded-xl flex items-center justify-center card-shadow border border-red-900/30">
-             <img src="assets/images/FordPerformance_Coyote_v1.2.png" alt="Sinister Logo" class="rounded-xl w-1/2 h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/DC2626?text=SINISTER';">
+        <header class="text-center mb-6">
+           <div class="bg-black p-3 rounded-xl flex items-center justify-center card-shadow border border-red-900/30">
+             <img src="assets/images/FordPerformance_Coyote_v1.2.png" alt="Sinister Logo" class="rounded-lg w-full md:w-1/2 h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/DC2626?text=SINISTER';">
            </div>
-            <h2 class="font-chiller text-4xl md:text-5xl text-red-500 mt-4 text-glow-red">2019 Ford Mustang GT</h2>
+            <h2 class="font-chiller text-4xl md:text-6xl text-red-500 mt-4 text-glow-red leading-tight">2019 Ford Mustang GT</h2>
         </header>
         
-        <main class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+        <main class="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6">
 
-            <div class="lg:col-span-3 space-y-6">
+            <div class="lg:col-span-3 space-y-4 md:space-y-6">
                 
-                <section class="bg-gray-900/80 p-6 rounded-none gradient-border card-shadow relative overflow-hidden">
-                    <h3 class="font-chiller text-4xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-4 text-glow-red">POWERTRAIN</h3>
-                    <ul class="list-none space-y-2 text-lg text-gray-300">                        
-                        <li><span class="text-red-700 mr-2">►</span>Gen 3 Coyote 5.0L V8 w/3.0L Whipple Supercharger</li>
-                        <li><span class="text-red-700 mr-2">►</span>132mm Billet Oval Throttle Body</li>
-                        <li><span class="text-red-700 mr-2">►</span>L&M Aftermarket 4 Cam Set</li>
-                        <li><span class="text-red-700 mr-2">►</span>Boundary Billet Oil Pump Gears & Crank Sprocket</li>
-                        <li><span class="text-red-700 mr-2">►</span>MMR Billet Rear Block & Bellhousing Bracing</li>
-                        <li><span class="text-red-700 mr-2">►</span>PP1 Larger Radiator</li>
-                        <li><span class="text-red-700 mr-2">►</span>Upgraded Fuel Rails & ID1050x Injectors</li>
-                        <li><span class="text-red-700 mr-2">►</span>Full Corsa Xtreme Active Exhaust w/Headers & Double H-Pipe</li>
-                        <li><span class="text-red-700 mr-2">►</span>Tuned by Lund Racing</li>
+                <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow relative overflow-hidden">
+                    <h3 class="font-chiller text-3xl md:text-4xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-3 text-glow-red">POWERTRAIN</h3>
+                    <ul class="list-none space-y-2 text-base md:text-lg text-gray-300">                        
+                        <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Gen 3 Coyote 5.0L V8 w/3.0L Whipple Supercharger</span></li>
+                        <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>132mm Billet Oval Throttle Body</span></li>
+                        <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>L&M Aftermarket 4 Cam Set</span></li>
+                        <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Boundary Billet Oil Pump Gears & Crank Sprocket</span></li>
+                        <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>MMR Billet Rear Block & Bellhousing Bracing</span></li>
+                        <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>PP1 Larger Radiator</span></li>
+                        <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Upgraded Fuel Rails & ID1050x Injectors</span></li>
+                        <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Full Corsa Xtreme Active Exhaust w/Headers & Double H-Pipe</span></li>
+                        <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Tuned by Lund Racing</span></li>
                     </ul>
                 </section>
                 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <section class="bg-gray-900/80 p-6 rounded-none gradient-border card-shadow">
-                        <h3 class="font-chiller text-4xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-4 text-glow-red">DRIVETRAIN</h3>
-                        <ul class="list-none space-y-2 text-lg text-gray-300">
-                            <li><span class="text-red-700 mr-2">►</span>Mantic Twin Disc Ceremetallic Clutch</li>
-                            <li><span class="text-red-700 mr-2">►</span>QA1 Carbon Fiber Driveshaft w/Safety Loop</li> 
-                            <li><span class="text-red-700 mr-2">►</span>MMR Differential Cooler System</li>
-                            <li><span class="text-red-700 mr-2">►</span>PP1 Torsen Differential w/3.73 Axle Ratio</li>
-                            <li><span class="text-red-700 mr-2">►</span>Ford Performance G-Force Axles</li>
-                            <li><span class="text-red-700 mr-2">►</span>MGW Short Throw Shifter w/Raceseng Knob</li>
+                <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+                    <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
+                        <h3 class="font-chiller text-3xl md:text-4xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-3 text-glow-red">DRIVETRAIN</h3>
+                        <ul class="list-none space-y-2 text-base md:text-lg text-gray-300">
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Mantic Twin Disc Ceremetallic Clutch</span></li>
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>QA1 Carbon Fiber Driveshaft w/Safety Loop</span></li> 
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>MMR Differential Cooler System</span></li>
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>PP1 Torsen Differential w/3.73 Axle Ratio</span></li>
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Ford Performance G-Force Axles</span></li>
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>MGW Short Throw Shifter w/Raceseng Knob</span></li>
                         </ul>
                     </section>
-                    <section class="bg-gray-900/80 p-6 rounded-none gradient-border card-shadow">
-                        <h3 class="font-chiller text-4xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-4 text-glow-red">SUSPENSION & BRAKES</h3>
-                        <ul class="list-none space-y-2 text-lg text-gray-300">
-                            <li><span class="text-red-700 mr-2">►</span>PP1 K-Brace, Sway Bar, Chassis Tuning</li>
-                            <li><span class="text-red-700 mr-2">►</span>Unique Stability Control, EPAS & ABS Tuning</li>
-                            <li><span class="text-red-700 mr-2">►</span>Ford Performance Lowering Springs</li>
-                            <li><span class="text-red-700 mr-2">►</span>BMR Rear Suspension (Cradle Lockouts, Subframe Braces, Billet Vertical Links)</li>
-                            <li><span class="text-red-700 mr-2">►</span>Brembo 6-Piston Front Brake Upgrade</li>
-                            <li><span class="text-red-700 mr-2">►</span>Steeda 2-Piece Full Floating Rotors</li>
+                    <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
+                        <h3 class="font-chiller text-3xl md:text-4xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-3 text-glow-red">SUSPENSION & BRAKES</h3>
+                        <ul class="list-none space-y-2 text-base md:text-lg text-gray-300">
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>PP1 K-Brace, Sway Bar, Chassis Tuning</span></li>
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Unique Stability Control, EPAS & ABS Tuning</span></li>
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Ford Performance Lowering Springs</span></li>
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>BMR Rear Suspension (Cradle Lockouts, Subframe Braces, Billet Vertical Links)</span></li>
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Brembo 6-Piston Front Brake Upgrade</span></li>
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Steeda 2-Piece Full Floating Rotors</span></li>
                         </ul>
                     </section>
                 </div>
                 
-        <div class="grid md:grid-cols-2 gap-6">
-                    <section class="bg-gray-900/80 p-6 rounded-none gradient-border card-shadow">
-                        <h3 class="font-chiller text-4xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-4 text-glow-red">INTERIOR & SOUND</h3>
-                         <ul class="list-none space-y-2 text-lg text-gray-300">
-                            <li><span class="text-red-700 mr-2">►</span>Custom Gauges w/Forscan Mods</li>
-                            <li><span class="text-red-700 mr-2">►</span>Custom Logo and Center Screen Graphics</li>
-                            <li><span class="text-red-700 mr-2">►</span>Sundown Audio 1,500w Class D Amp w/Matched 12" Woofers</li>
+        <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+                    <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
+                        <h3 class="font-chiller text-3xl md:text-4xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-3 text-glow-red">INTERIOR & SOUND</h3>
+                         <ul class="list-none space-y-2 text-base md:text-lg text-gray-300">
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Custom Gauges w/Forscan Mods</span></li>
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Custom Logo and Center Screen Graphics</span></li>
+                            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Sundown Audio 1,500w Class D Amp w/Matched 12" Woofers</span></li>
                         </ul>
                     </section>
-                <section class="bg-gray-900/80 p-6 rounded-none gradient-border card-shadow">
-                    <h3 class="font-chiller text-4xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-4 text-glow-red">EXTERIOR & WHEELS</h3>
-                     <ul class="list-none space-y-2 text-lg text-gray-300">
-                        <li><span class="text-red-700 mr-2">►</span>Full Carbon Fiber Terminator Hood by VIS Racing</li>
-                        <li><span class="text-red-700 mr-2">►</span>PP1 Performance Rear Wing</li>
-                        <li><span class="text-red-700 mr-2">►</span>P51 Wheels with Nitto NT 555 G2 Tires</li>
-            <li><span class="text-red-700 mr-2">►</span>The Onion Shop Paint Correction and Ceramic Coating</li>
+                <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
+                    <h3 class="font-chiller text-3xl md:text-4xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-3 text-glow-red">EXTERIOR & WHEELS</h3>
+                     <ul class="list-none space-y-2 text-base md:text-lg text-gray-300">
+                        <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>Full Carbon Fiber Terminator Hood by VIS Racing</span></li>
+                        <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>PP1 Performance Rear Wing</span></li>
+                        <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>P51 Wheels with Nitto NT 555 G2 Tires</span></li>
+            <li class="flex items-start"><span class="text-red-700 mr-2 mt-1">►</span><span>The Onion Shop Paint Correction and Ceramic Coating</span></li>
                     </ul>
                 </section>
 
                 </div>
-                <section class="bg-gray-900/80 p-6 rounded-none gradient-border card-shadow">
-                    <h3 class="font-chiller text-4xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-4 text-glow-red">SPECIAL THANKS</h3>
-                     <ul class="list-none space-y-2 text-lg text-gray-300">
+                <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
+                    <h3 class="font-chiller text-3xl md:text-4xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-3 text-glow-red">SPECIAL THANKS</h3>
+                     <ul class="list-none space-y-2 text-base md:text-lg text-gray-300">
                         <li><strong class="text-red-500">Build:</strong> The Snake Pit</li>
                         <li><strong class="text-red-500">Exhaust:</strong> Corsa Performance</li>
                         <li><strong class="text-red-500">Headrests & Console:</strong> Anderson Custom Interiors</li>
@@ -147,12 +141,12 @@
 
                 <section class="bg-black p-6 rounded-xl border border-red-900/50 card-shadow">
                     <h3 class="font-chiller text-3xl font-bold text-gray-400 mb-4 text-center">✨ What does Sinister sound like?</h3>
-                    <div class="text-center">
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
                         <audio id="mySound" src="assets/audio/cammed_idle_audio.mp3" preload="none"></audio>
-                        <button class="bg-red-900/80 hover:bg-red-700 text-white font-chiller text-2xl py-2 px-6 rounded border border-red-500 transition-transform hover:scale-105" onclick="document.getElementById('mySound').play()">
+                        <button class="bg-red-900/80 hover:bg-red-700 text-white font-chiller text-2xl py-3 px-8 rounded border border-red-500 transition-transform active:scale-95" onclick="document.getElementById('mySound').play()">
                             PLAY IDLE
                         </button>
-                        <button class="bg-gray-800 hover:bg-gray-700 text-gray-400 font-chiller text-2xl py-2 px-6 rounded border border-gray-600 transition-transform hover:scale-105" onclick="document.getElementById('mySound').pause(); document.getElementById('mySound').currentTime = 0;">
+                        <button class="bg-gray-800 hover:bg-gray-700 text-gray-400 font-chiller text-2xl py-3 px-8 rounded border border-gray-600 transition-transform active:scale-95" onclick="document.getElementById('mySound').pause(); document.getElementById('mySound').currentTime = 0;">
                             STOP
                         </button>
                     </div>
@@ -160,7 +154,7 @@
 
             </div>
             
-            <div class="lg:col-span-2 space-y-6">
+            <div class="lg:col-span-2 space-y-4 md:space-y-6">
                 <div class="bg-black p-2 rounded-xl flex items-center justify-center card-shadow border border-red-900/30">
                     <img src="assets/images/Sinister_Simple.png" alt="Sinister Mustang front view" class="rounded-lg w-full h-auto object-cover"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Sinister';">
@@ -182,6 +176,11 @@
                 </div>
             </div>
         </main>
+        
+        <footer class="mt-8 text-center opacity-60">
+             <div style="font-size: x-small; color: #6b7280;">Some fonts from <a href="https://www.onlinewebfonts.com/icon" class="hover:text-red-500 transition-colors">svg icons</a> licensed by CC BY 4.0</div>
+        </footer>
+
     </div>
 </body>
 </html>
