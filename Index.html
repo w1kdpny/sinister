@@ -15,49 +15,46 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Load Chiller font specifically for the Title */
-        @font-face {
-            font-family: 'Chiller';
-            src: url('https://db.onlinewebfonts.com/t/086f65e2a3c5771822834952d7e95669.eot');
-            src: url('https://db.onlinewebfonts.com/t/086f65e2a3c5771822834952d7e95669.eot?#iefix') format('embedded-opentype'),
-                 url('https://db.onlinewebfonts.com/t/086f65e2a3c5771822834952d7e95669.woff2') format('woff2'),
-                 url('https://db.onlinewebfonts.com/t/086f65e2a3c5771822834952d7e95669.woff') format('woff'),
-                 url('https://db.onlinewebfonts.com/t/086f65e2a3c5771822834952d7e95669.ttf') format('truetype'),
-                 url('https://db.onlinewebfonts.com/t/086f65e2a3c5771822834952d7e95669.svg#Chiller') format('svg');
-        }
-
         body {
             font-family: 'Inter', sans-serif;
             background-color: #050505;
             color: #F3F4F6;
         }
-        .font-orbitron {
+
+        /* The "Ford Performance" Style: Heavy, Italic, Uppercase */
+        .font-racing {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900; /* Extra Black */
+            font-style: italic; /* The "Speed" look */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .font-tech {
             font-family: 'Orbitron', sans-serif;
             letter-spacing: 0.05em;
         }
-        .font-chiller {
-            font-family: 'Chiller', cursive; 
-            font-weight: normal;
-            letter-spacing: 0.05em;
-        }
-        /* Glowing Red Effect for Headers */
+
+        /* Clean Red Glow - Sharp and Aggressive */
         .text-glow-red {
-            text-shadow: 0 0 5px rgba(220, 38, 38, 0.6), 0 0 15px rgba(220, 38, 38, 0.3);
+            text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
         }
+
         .card-shadow {
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 2px rgba(255, 255, 255, 0.05);
         }
+
         .gradient-border {
             border: 1px solid transparent;
             background-clip: padding-box;
-            border-image: linear-gradient(180deg, #991b1b, #1f2937, #991b1b) 1; 
+            border-image: linear-gradient(180deg, #b91c1c, #1f2937, #b91c1c) 1; 
         }
         
         /* Custom Bullet Styling - Clean Red Squares */
         ul.custom-list {
-            list-style: none; /* Remove default bullets */
+            list-style: none;
             padding-left: 1.25rem;
         }
         ul.custom-list li {
@@ -66,8 +63,8 @@
             padding-left: 1rem;
         }
         ul.custom-list li::before {
-            content: "▪";  /* Simple Square Bullet */
-            color: #ef4444; /* Red color */
+            content: "▪"; 
+            color: #ef4444; 
             font-size: 1.2em;
             position: absolute;
             left: -1rem;
@@ -83,7 +80,9 @@
            <div class="bg-black p-3 rounded-xl flex items-center justify-center card-shadow border border-red-900/30">
              <img src="assets/images/FordPerformance_Coyote_v1.2.png" alt="Sinister Logo" class="rounded-lg w-full md:w-1/2 h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/DC2626?text=SINISTER';">
            </div>
-            <h2 class="font-chiller text-5xl md:text-6xl text-red-500 mt-4 text-glow-red leading-tight">2019 Ford Mustang GT</h2>
+            <h2 class="font-racing text-4xl md:text-6xl text-white mt-4 italic leading-tight">
+                2019 Ford <span class="text-red-600">Mustang GT</span>
+            </h2>
         </header>
         
         <main class="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6">
@@ -91,7 +90,9 @@
             <div class="lg:col-span-3 space-y-4 md:space-y-6">
                 
                 <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
-                    <h3 class="font-orbitron text-2xl md:text-3xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-3 text-glow-red">POWERTRAIN</h3>
+                    <h3 class="font-racing text-2xl md:text-3xl text-white border-b border-red-900/50 pb-2 mb-3">
+                        <span class="text-red-600">POWER</span>TRAIN
+                    </h3>
                     <ul class="custom-list text-base md:text-lg text-gray-200">                        
                         <li>Gen 3 Coyote 5.0L V8 w/3.0L Whipple Supercharger</li>
                         <li>132mm Billet Oval Throttle Body</li>
@@ -107,7 +108,9 @@
                 
                 <div class="grid md:grid-cols-2 gap-4 md:gap-6">
                     <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
-                        <h3 class="font-orbitron text-2xl md:text-3xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-3 text-glow-red">DRIVETRAIN</h3>
+                        <h3 class="font-racing text-2xl md:text-3xl text-white border-b border-red-900/50 pb-2 mb-3">
+                            <span class="text-red-600">DRIVE</span>TRAIN
+                        </h3>
                         <ul class="custom-list text-base md:text-lg text-gray-200">
                             <li>Mantic Twin Disc Ceremetallic Clutch</li>
                             <li>QA1 Carbon Fiber Driveshaft w/Safety Loop</li> 
@@ -118,7 +121,9 @@
                         </ul>
                     </section>
                     <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
-                        <h3 class="font-orbitron text-2xl md:text-3xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-3 text-glow-red">SUSPENSION & BRAKES</h3>
+                        <h3 class="font-racing text-2xl md:text-3xl text-white border-b border-red-900/50 pb-2 mb-3">
+                            SUSPENSION <span class="text-red-600">&</span> BRAKES
+                        </h3>
                         <ul class="custom-list text-base md:text-lg text-gray-200">
                             <li>PP1 K-Brace, Sway Bar, Chassis Tuning</li>
                             <li>Unique Stability Control, EPAS & ABS Tuning</li>
@@ -132,7 +137,9 @@
                 
         <div class="grid md:grid-cols-2 gap-4 md:gap-6">
                     <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
-                        <h3 class="font-orbitron text-2xl md:text-3xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-3 text-glow-red">INTERIOR & SOUND</h3>
+                         <h3 class="font-racing text-2xl md:text-3xl text-white border-b border-red-900/50 pb-2 mb-3">
+                            INTERIOR <span class="text-red-600">&</span> SOUND
+                        </h3>
                          <ul class="custom-list text-base md:text-lg text-gray-200">
                             <li>Custom Gauges w/Forscan Mods</li>
                             <li>Custom Logo and Center Screen Graphics</li>
@@ -140,7 +147,9 @@
                         </ul>
                     </section>
                 <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
-                    <h3 class="font-orbitron text-2xl md:text-3xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-3 text-glow-red">EXTERIOR & WHEELS</h3>
+                    <h3 class="font-racing text-2xl md:text-3xl text-white border-b border-red-900/50 pb-2 mb-3">
+                        EXTERIOR <span class="text-red-600">&</span> WHEELS
+                    </h3>
                      <ul class="custom-list text-base md:text-lg text-gray-200">
                         <li>Full Carbon Fiber Terminator Hood by VIS Racing</li>
                         <li>PP1 Performance Rear Wing</li>
@@ -151,25 +160,29 @@
 
                 </div>
                 <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
-                    <h3 class="font-orbitron text-2xl md:text-3xl font-bold text-red-600 border-b border-red-900/50 pb-2 mb-3 text-glow-red">SPECIAL THANKS</h3>
+                    <h3 class="font-racing text-2xl md:text-3xl text-white border-b border-red-900/50 pb-2 mb-3">
+                        SPECIAL <span class="text-red-600">THANKS</span>
+                    </h3>
                      <ul class="custom-list text-base md:text-lg text-gray-200">
-                        <li><strong class="text-red-500">Build:</strong> The Snake Pit</li>
-                        <li><strong class="text-red-500">Exhaust:</strong> Corsa Performance</li>
-                        <li><strong class="text-red-500">Headrests & Console:</strong> Anderson Custom Interiors</li>
-            <li><strong class="text-red-500">My Family & Friends:</strong> Katie, Adam, and Derrick</li>
-            <li><strong class="text-red-500">God is Great & God Bless America!</strong></li> 
+                        <li><strong class="text-white">Build:</strong> The Snake Pit</li>
+                        <li><strong class="text-white">Exhaust:</strong> Corsa Performance</li>
+                        <li><strong class="text-white">Headrests & Console:</strong> Anderson Custom Interiors</li>
+            <li><strong class="text-white">My Family & Friends:</strong> Katie, Adam, and Derrick</li>
+            <li><strong class="text-white">God is Great & God Bless America!</strong></li> 
                     </ul>
                 </section>
 
                 <section class="bg-black p-6 rounded-xl border border-red-900/50 card-shadow">
-                    <h3 class="font-chiller text-3xl font-bold text-gray-400 mb-4 text-center">✨ What does Sinister sound like?</h3>
+                    <h3 class="font-racing text-2xl md:text-4xl text-white mb-4 text-center italic">
+                        WHAT DOES <span class="text-red-600">SINISTER</span> SOUND LIKE?
+                    </h3>
                     <div class="flex flex-col sm:flex-row justify-center gap-4">
                         <audio id="mySound" src="assets/audio/cammed_idle_audio.mp3" preload="none"></audio>
-                        <button class="bg-red-900/80 hover:bg-red-700 text-white font-orbitron text-lg py-3 px-8 rounded border border-red-500 transition-transform active:scale-95" onclick="document.getElementById('mySound').play()">
-                            PLAY IDLE
+                        <button class="bg-red-700 hover:bg-red-600 text-white font-racing text-lg py-3 px-8 skew-x-[-10deg] border-l-4 border-white transition-transform active:scale-95" onclick="document.getElementById('mySound').play()">
+                            <span class="block skew-x-[10deg]">PLAY IDLE</span>
                         </button>
-                        <button class="bg-gray-800 hover:bg-gray-700 text-gray-400 font-orbitron text-lg py-3 px-8 rounded border border-gray-600 transition-transform active:scale-95" onclick="document.getElementById('mySound').pause(); document.getElementById('mySound').currentTime = 0;">
-                            STOP
+                        <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-racing text-lg py-3 px-8 skew-x-[-10deg] border-l-4 border-gray-500 transition-transform active:scale-95" onclick="document.getElementById('mySound').pause(); document.getElementById('mySound').currentTime = 0;">
+                            <span class="block skew-x-[10deg]">STOP</span>
                         </button>
                     </div>
                 </section>
