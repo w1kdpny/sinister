@@ -21,13 +21,14 @@
             font-family: 'Inter', sans-serif;
             background-color: #050505;
             color: #F3F4F6;
+            /* subtle background texture pattern could go here, but keeping it clean black */
         }
 
-        /* The "Ford Performance" Style: Heavy, Italic, Uppercase */
+        /* Typography */
         .font-racing {
             font-family: 'Inter', sans-serif;
-            font-weight: 900; /* Extra Black */
-            font-style: italic; /* The "Speed" look */
+            font-weight: 900;
+            font-style: italic;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -37,63 +38,67 @@
             letter-spacing: 0.05em;
         }
 
-        /* Clean Red Glow - Sharp and Aggressive */
+        /* The New "Professional Fade" Card Style */
+        .pro-card {
+            /* 1. The Speed Line: Only at the top */
+            border-top: 2px solid rgba(220, 38, 38, 0.6);
+            
+            /* 2. The Fade: Dark gray at top, fading to transparent at bottom */
+            background: linear-gradient(180deg, rgba(31, 41, 55, 0.4) 0%, rgba(5, 5, 5, 0) 100%);
+            
+            /* 3. Spacing to let the fade breathe */
+            padding-bottom: 2rem; 
+            margin-bottom: 1rem;
+        }
+
         .text-glow-red {
-            text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
-        }
-
-        .card-shadow {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 2px rgba(255, 255, 255, 0.05);
-        }
-
-        .gradient-border {
-            border: 1px solid transparent;
-            background-clip: padding-box;
-            border-image: linear-gradient(180deg, #b91c1c, #1f2937, #b91c1c) 1; 
+            text-shadow: 0 0 15px rgba(220, 38, 38, 0.6);
         }
         
-        /* Custom Bullet Styling - Clean Red Squares */
+        /* Bullets */
         ul.custom-list {
             list-style: none;
-            padding-left: 1.25rem;
+            padding-left: 0.5rem;
         }
         ul.custom-list li {
             position: relative;
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
+            margin-bottom: 0.6rem;
+            padding-left: 1.5rem;
+            color: #d1d5db; /* Light gray for better readability */
         }
         ul.custom-list li::before {
             content: "▪"; 
             color: #ef4444; 
             font-size: 1.2em;
             position: absolute;
-            left: -1rem;
+            left: 0;
             top: -0.1rem;
         }
     </style>
 </head>
 <body class="antialiased selection:bg-red-900 selection:text-white">
 
-    <div class="container mx-auto px-4 py-6 max-w-7xl">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
         
-        <header class="text-center mb-6">
-           <div class="bg-black p-3 rounded-xl flex items-center justify-center card-shadow border border-red-900/30">
-             <img src="assets/images/FordPerformance_Coyote_v1.2.png" alt="Sinister Logo" class="rounded-lg w-full md:w-1/2 h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/DC2626?text=SINISTER';">
+        <header class="text-center mb-10">
+           <div class="flex items-center justify-center mb-6">
+             <img src="assets/images/FordPerformance_Coyote_v1.2.png" alt="Sinister Logo" class="rounded-lg w-full md:w-1/3 h-auto object-cover opacity-90" onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/DC2626?text=SINISTER';">
            </div>
-            <h2 class="font-racing text-4xl md:text-6xl text-white mt-4 italic leading-tight">
-                2019 Ford <span class="text-red-600">Mustang GT</span>
+            
+            <h2 class="font-racing text-5xl md:text-7xl text-white mt-4 italic leading-tight tracking-tighter">
+                2019 FORD <span class="text-red-600 text-glow-red">MUSTANG GT</span>
             </h2>
         </header>
         
-        <main class="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6">
+        <main class="grid grid-cols-1 lg:grid-cols-5 gap-8">
 
-            <div class="lg:col-span-3 space-y-4 md:space-y-6">
+            <div class="lg:col-span-3 space-y-8">
                 
-                <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
-                    <h3 class="font-racing text-2xl md:text-3xl text-white border-b border-red-900/50 pb-2 mb-3">
+                <section class="pro-card p-5 rounded-t-xl">
+                    <h3 class="font-racing text-3xl md:text-4xl text-white mb-4">
                         <span class="text-red-600">POWER</span>TRAIN
                     </h3>
-                    <ul class="custom-list text-base md:text-lg text-gray-200">                        
+                    <ul class="custom-list text-base md:text-lg">                        
                         <li>Gen 3 Coyote 5.0L V8 w/3.0L Whipple Supercharger</li>
                         <li>132mm Billet Oval Throttle Body</li>
                         <li>L&M Aftermarket 4 Cam Set</li>
@@ -106,12 +111,12 @@
                     </ul>
                 </section>
                 
-                <div class="grid md:grid-cols-2 gap-4 md:gap-6">
-                    <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
-                        <h3 class="font-racing text-2xl md:text-3xl text-white border-b border-red-900/50 pb-2 mb-3">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <section class="pro-card p-5 rounded-t-xl">
+                        <h3 class="font-racing text-2xl md:text-3xl text-white mb-4">
                             <span class="text-red-600">DRIVE</span>TRAIN
                         </h3>
-                        <ul class="custom-list text-base md:text-lg text-gray-200">
+                        <ul class="custom-list text-base md:text-lg">
                             <li>Mantic Twin Disc Ceremetallic Clutch</li>
                             <li>QA1 Carbon Fiber Driveshaft w/Safety Loop</li> 
                             <li>MMR Differential Cooler System</li>
@@ -120,11 +125,12 @@
                             <li>MGW Short Throw Shifter w/Raceseng Knob</li>
                         </ul>
                     </section>
-                    <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
-                        <h3 class="font-racing text-2xl md:text-3xl text-white border-b border-red-900/50 pb-2 mb-3">
-                            SUSPENSION <span class="text-red-600">&</span> BRAKES
+                    
+                    <section class="pro-card p-5 rounded-t-xl">
+                        <h3 class="font-racing text-2xl md:text-3xl text-white mb-4">
+                            CHASSIS <span class="text-red-600">&</span> BRAKES
                         </h3>
-                        <ul class="custom-list text-base md:text-lg text-gray-200">
+                        <ul class="custom-list text-base md:text-lg">
                             <li>PP1 K-Brace, Sway Bar, Chassis Tuning</li>
                             <li>Unique Stability Control, EPAS & ABS Tuning</li>
                             <li>Ford Performance Lowering Springs</li>
@@ -135,84 +141,87 @@
                     </section>
                 </div>
                 
-        <div class="grid md:grid-cols-2 gap-4 md:gap-6">
-                    <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
-                         <h3 class="font-racing text-2xl md:text-3xl text-white border-b border-red-900/50 pb-2 mb-3">
-                            INTERIOR <span class="text-red-600">&</span> SOUND
+                <div class="grid md:grid-cols-2 gap-8">
+                    <section class="pro-card p-5 rounded-t-xl">
+                         <h3 class="font-racing text-2xl md:text-3xl text-white mb-4">
+                            COCKPIT <span class="text-red-600">&</span> AUDIO
                         </h3>
-                         <ul class="custom-list text-base md:text-lg text-gray-200">
+                         <ul class="custom-list text-base md:text-lg">
                             <li>Custom Gauges w/Forscan Mods</li>
                             <li>Custom Logo and Center Screen Graphics</li>
                             <li>Sundown Audio 1,500w Class D Amp w/Matched 12" Woofers</li>
                         </ul>
                     </section>
-                <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
-                    <h3 class="font-racing text-2xl md:text-3xl text-white border-b border-red-900/50 pb-2 mb-3">
-                        EXTERIOR <span class="text-red-600">&</span> WHEELS
-                    </h3>
-                     <ul class="custom-list text-base md:text-lg text-gray-200">
-                        <li>Full Carbon Fiber Terminator Hood by VIS Racing</li>
-                        <li>PP1 Performance Rear Wing</li>
-                        <li>P51 Wheels with Nitto NT 555 G2 Tires</li>
-            <li>The Onion Shop Paint Correction and Ceramic Coating</li>
-                    </ul>
-                </section>
-
+                    
+                    <section class="pro-card p-5 rounded-t-xl">
+                        <h3 class="font-racing text-2xl md:text-3xl text-white mb-4">
+                            AERO <span class="text-red-600">&</span> WHEELS
+                        </h3>
+                         <ul class="custom-list text-base md:text-lg">
+                            <li>Full Carbon Fiber Terminator Hood by VIS Racing</li>
+                            <li>PP1 Performance Rear Wing</li>
+                            <li>P51 Wheels with Nitto NT 555 G2 Tires</li>
+                            <li>The Onion Shop Paint Correction and Ceramic Coating</li>
+                        </ul>
+                    </section>
                 </div>
-                <section class="bg-gray-900/80 p-5 rounded-none gradient-border card-shadow">
-                    <h3 class="font-racing text-2xl md:text-3xl text-white border-b border-red-900/50 pb-2 mb-3">
+
+                <section class="pro-card p-5 rounded-t-xl">
+                    <h3 class="font-racing text-2xl md:text-3xl text-white mb-4">
                         SPECIAL <span class="text-red-600">THANKS</span>
                     </h3>
-                     <ul class="custom-list text-base md:text-lg text-gray-200">
+                     <ul class="custom-list text-base md:text-lg">
                         <li><strong class="text-white">Build:</strong> The Snake Pit</li>
                         <li><strong class="text-white">Exhaust:</strong> Corsa Performance</li>
                         <li><strong class="text-white">Headrests & Console:</strong> Anderson Custom Interiors</li>
-            <li><strong class="text-white">My Family & Friends:</strong> Katie, Adam, and Derrick</li>
-            <li><strong class="text-white">God is Great & God Bless America!</strong></li> 
+                        <li><strong class="text-white">My Family & Friends:</strong> Katie, Adam, and Derrick</li>
+                        <li><strong class="text-white">God is Great & God Bless America!</strong></li> 
                     </ul>
                 </section>
 
-                <section class="bg-black p-6 rounded-xl border border-red-900/50 card-shadow">
-                    <h3 class="font-racing text-2xl md:text-4xl text-white mb-4 text-center italic">
+                <section class="bg-gradient-to-b from-gray-900 to-black border-t-2 border-red-800 p-8 rounded-xl shadow-2xl">
+                    <h3 class="font-racing text-2xl md:text-4xl text-white mb-6 text-center italic">
                         WHAT DOES <span class="text-red-600">SINISTER</span> SOUND LIKE?
                     </h3>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <div class="flex flex-col sm:flex-row justify-center gap-6">
                         <audio id="mySound" src="assets/audio/cammed_idle_audio.mp3" preload="none"></audio>
-                        <button class="bg-red-700 hover:bg-red-600 text-white font-racing text-lg py-3 px-8 skew-x-[-10deg] border-l-4 border-white transition-transform active:scale-95" onclick="document.getElementById('mySound').play()">
-                            <span class="block skew-x-[10deg]">PLAY IDLE</span>
+                        
+                        <button class="group relative px-8 py-3 bg-red-700 hover:bg-red-600 text-white font-racing text-xl italic tracking-wider skew-x-[-12deg] transition-all hover:scale-105 shadow-[0_0_20px_rgba(220,38,38,0.5)]" onclick="document.getElementById('mySound').play()">
+                            <span class="block skew-x-[12deg] group-hover:text-black transition-colors">START ENGINE</span>
                         </button>
-                        <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-racing text-lg py-3 px-8 skew-x-[-10deg] border-l-4 border-gray-500 transition-transform active:scale-95" onclick="document.getElementById('mySound').pause(); document.getElementById('mySound').currentTime = 0;">
-                            <span class="block skew-x-[10deg]">STOP</span>
+                        
+                        <button class="group relative px-8 py-3 bg-gray-800 hover:bg-gray-700 text-gray-400 font-racing text-xl italic tracking-wider skew-x-[-12deg] transition-all hover:scale-105 border border-gray-600" onclick="document.getElementById('mySound').pause(); document.getElementById('mySound').currentTime = 0;">
+                            <span class="block skew-x-[12deg] group-hover:text-white transition-colors">KILL SWITCH</span>
                         </button>
                     </div>
                 </section>
 
             </div>
             
-            <div class="lg:col-span-2 space-y-4 md:space-y-6">
-                <div class="bg-black p-2 rounded-xl flex items-center justify-center card-shadow border border-red-900/30">
-                    <img src="assets/images/Sinister_Simple.png" alt="Sinister Mustang front view" class="rounded-lg w-full h-auto object-cover"
+            <div class="lg:col-span-2 space-y-6">
+                <div class="bg-transparent flex items-center justify-center">
+                    <img src="assets/images/Sinister_Simple.png" alt="Sinister Mustang front view" class="rounded-lg w-full h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Sinister';">
                 </div>
 
-                <div class="bg-black p-2 rounded-xl flex items-center justify-center card-shadow border border-red-900/30">
-                    <img src="assets/images/Engine_View.png" alt="Engine View" class="rounded-lg w-full h-auto object-cover"
+                <div class="bg-transparent flex items-center justify-center">
+                    <img src="assets/images/Engine_View.png" alt="Engine View" class="rounded-lg w-full h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Engine';">
                 </div>
 
-                <div class="bg-black p-2 rounded-xl flex items-center justify-center card-shadow border border-red-900/30">
-                    <img src="assets/images/Cam_Teardown.png" alt="Engine Assembly" class="rounded-lg w-full h-auto object-cover"
+                <div class="bg-transparent flex items-center justify-center">
+                    <img src="assets/images/Cam_Teardown.png" alt="Engine Assembly" class="rounded-lg w-full h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Teardown';">
                 </div>
 
-                <div class="bg-black p-2 rounded-xl flex items-center justify-center card-shadow border border-red-900/30">
-                    <img src="assets/images/Interior_View.png" alt="Interior" class="rounded-lg w-full h-auto object-cover"
+                <div class="bg-transparent flex items-center justify-center">
+                    <img src="assets/images/Interior_View.png" alt="Interior" class="rounded-lg w-full h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Interior';">
                 </div>
             </div>
         </main>
         
-        <footer class="mt-8 text-center opacity-60">
+        <footer class="mt-12 text-center opacity-40 hover:opacity-100 transition-opacity">
              <div style="font-size: x-small; color: #6b7280;">Some fonts from <a href="https://www.onlinewebfonts.com/icon" class="hover:text-red-500 transition-colors">svg icons</a> licensed by CC BY 4.0</div>
         </footer>
 
