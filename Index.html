@@ -21,7 +21,6 @@
             font-family: 'Inter', sans-serif;
             background-color: #050505;
             color: #F3F4F6;
-            /* subtle background texture pattern could go here, but keeping it clean black */
         }
 
         /* Typography */
@@ -38,15 +37,10 @@
             letter-spacing: 0.05em;
         }
 
-        /* The New "Professional Fade" Card Style */
+        /* Pro Card Style */
         .pro-card {
-            /* 1. The Speed Line: Only at the top */
             border-top: 2px solid rgba(220, 38, 38, 0.6);
-            
-            /* 2. The Fade: Dark gray at top, fading to transparent at bottom */
             background: linear-gradient(180deg, rgba(31, 41, 55, 0.4) 0%, rgba(5, 5, 5, 0) 100%);
-            
-            /* 3. Spacing to let the fade breathe */
             padding-bottom: 2rem; 
             margin-bottom: 1rem;
         }
@@ -64,7 +58,7 @@
             position: relative;
             margin-bottom: 0.6rem;
             padding-left: 1.5rem;
-            color: #d1d5db; /* Light gray for better readability */
+            color: #d1d5db; 
         }
         ul.custom-list li::before {
             content: "▪"; 
@@ -82,7 +76,7 @@
         
         <header class="text-center mb-10">
            <div class="flex items-center justify-center mb-6">
-             <img src="assets/images/FordPerformance_Coyote_v1.2.png" alt="Sinister Logo" class="rounded-lg w-full md:w-1/3 h-auto object-cover opacity-90" onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/DC2626?text=SINISTER';">
+             <img src="assets/images/FordPerformance_Coyote_v1.2.png" alt="Sinister Logo" class="rounded-lg w-full md:w-1/3 h-auto object-cover opacity-90 mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/DC2626?text=SINISTER';">
            </div>
             
             <h2 class="font-racing text-5xl md:text-7xl text-white mt-4 italic leading-tight tracking-tighter">
@@ -198,24 +192,25 @@
 
             </div>
             
-            <div class="lg:col-span-2 space-y-6">
-                <div class="bg-transparent flex items-center justify-center">
-                    <img src="assets/images/Sinister_Simple.png" alt="Sinister Mustang front view" class="rounded-lg w-full h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity"
+            <div class="lg:col-span-2 space-y-8 flex flex-col items-center">
+                
+                <div class="bg-transparent w-full flex justify-center">
+                    <img src="assets/images/Sinister_Simple.png" alt="Sinister Mustang front view" class="rounded-lg max-w-full w-auto h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity mx-auto"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Sinister';">
                 </div>
 
-                <div class="bg-transparent flex items-center justify-center">
-                    <img src="assets/images/Engine_View.png" alt="Engine View" class="rounded-lg w-full h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity"
+                <div class="bg-transparent w-full flex justify-center">
+                    <img src="assets/images/Engine_View.png" alt="Engine View" class="rounded-lg max-w-full w-auto h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity mx-auto"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Engine';">
                 </div>
 
-                <div class="bg-transparent flex items-center justify-center">
-                    <img src="assets/images/Cam_Teardown.png" alt="Engine Assembly" class="rounded-lg w-full h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity"
+                <div class="bg-transparent w-full flex justify-center">
+                    <img src="assets/images/Cam_Teardown.png" alt="Engine Assembly" class="rounded-lg max-w-full w-auto h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity mx-auto"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Teardown';">
                 </div>
 
-                <div class="bg-transparent flex items-center justify-center">
-                    <img src="assets/images/Interior_View.png" alt="Interior" class="rounded-lg w-full h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity"
+                <div class="bg-transparent w-full flex justify-center">
+                    <img src="assets/images/Interior_View.png" alt="Interior" class="rounded-lg max-w-full w-auto h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity mx-auto"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Interior';">
                 </div>
             </div>
