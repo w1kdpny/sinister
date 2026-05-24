@@ -754,4 +754,117 @@
         <img src="assets/images/Engine_View.png" alt="Engine Bay" loading="lazy" />
         <div class="gallery-item-label">Engine Bay</div>
       </div>
-      <div class="gallery-item" onclick="openLightbox(this)
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="assets/images/Cam_Teardown.png" alt="Cam Assembly" loading="lazy" />
+        <div class="gallery-item-label">Cam Assembly</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)" style="grid-column: 1 / -1;">
+        <img src="assets/images/Interior_View.png" alt="Interior" loading="lazy" style="aspect-ratio: unset; height: 400px; object-fit: cover;" />
+        <div class="gallery-item-label">Interior</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THANKS -->
+  <section class="thanks-section">
+    <div class="reveal">
+      <p class="section-eyebrow">Acknowledgements</p>
+      <h2 class="section-title">SPECIAL THANKS</h2>
+    </div>
+    <ul class="thanks-list reveal">
+      <li>
+        <span class="thanks-role">Build</span>
+        <span class="thanks-name">The Snake Pit</span>
+      </li>
+      <li>
+        <span class="thanks-role">Exhaust</span>
+        <span class="thanks-name">Corsa Performance</span>
+      </li>
+      <li>
+        <span class="thanks-role">Headrests &amp; Console</span>
+        <span class="thanks-name">Anderson Custom Interiors</span>
+      </li>
+      <li>
+        <span class="thanks-role">Family &amp; Friends</span>
+        <span class="thanks-name">Katie, Adam &amp; Derrick</span>
+      </li>
+      <li>God is Great &amp; God Bless America!</li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>SINISTER · 2019 FORD MUSTANG GT · GEN 3 COYOTE 5.0L V8</p>
+    <p style="margin-top:0.5rem;">Some icons via <a href="https://www.onlinewebfonts.com/icon" target="_blank">onlinewebfonts.com</a> · CC BY 4.0</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-close" onclick="closeLightbox()">CLOSE ✕</div>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    // ── AUDIO ──
+    const audio = new Audio('assets/audio/cammed_idle_audio.mp3');
+    const visualizer = document.getElementById('visualizer');
+    const NUM_BARS = 20;
+    const bars = [];
+
+    for (let i = 0; i < NUM_BARS; i++) {
+      const b = document.createElement('div');
+      b.className = 'bar';
+      const h = 8 + Math.random() * 28;
+      b.style.setProperty('--h', h + 'px');
+      b.style.setProperty('--dur', (0.3 + Math.random() * 0.5) + 's');
+      b.style.animationDelay = (Math.random() * 0.4) + 's';
+      visualizer.appendChild(b);
+      bars.push(b);
+    }
+
+    document.getElementById('startBtn').addEventListener('click', () => {
+      audio.currentTime = 0;
+      audio.play();
+      bars.forEach(b => b.classList.add('active'));
+    });
+
+    document.getElementById('killBtn').addEventListener('click', () => {
+      audio.pause();
+      audio.currentTime = 0;
+      bars.forEach(b => b.classList.remove('active'));
+    });
+
+    audio.addEventListener('ended', () => {
+      bars.forEach(b => b.classList.remove('active'));
+    });
+
+    // ── LIGHTBOX ──
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+      document.getElementById('lightbox').classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // ── SCROLL REVEAL ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
