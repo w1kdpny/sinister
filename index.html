@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SINISTER — 2019 Ford Mustang GT</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NK99FQVSGV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NK99FQVSGV');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -110,11 +117,19 @@
       animation: fadeUp 0.8s 0.2s forwards;
     }
 
+    @font-face {
+      font-family: 'Chiller';
+      src: url('font/chiller.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
     .hero-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(5rem, 18vw, 13rem);
+      font-family: 'Chiller', cursive;
+      font-size: clamp(5.5rem, 20vw, 15rem);
       line-height: 0.88;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       color: var(--white);
       text-shadow: 0 0 80px var(--red-glow), 0 0 3px rgba(255,255,255,0.1);
       opacity: 0;
