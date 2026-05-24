@@ -1,227 +1,757 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NK99FQVSGV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SINISTER — 2019 Ford Mustang GT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #080808;
+      --deep: #0e0e0e;
+      --card: #131313;
+      --border: #222;
+      --red: #c8102e;
+      --red-glow: rgba(200, 16, 46, 0.35);
+      --red-dim: #8a0b1f;
+      --white: #f0ede8;
+      --gray: #7a7a7a;
+      --light: #b0aca6;
+    }
 
-  gtag('config', 'G-NK99FQVSGV');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinister - 2019 Ford Mustang GT</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Orbitron:wght@700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #050505;
-            color: #F3F4F6;
-        }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        /* Typography */
-        .font-racing {
-            font-family: 'Inter', sans-serif;
-            font-weight: 900;
-            font-style: italic;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
+    html { scroll-behavior: smooth; }
 
-        .font-tech {
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 0.05em;
-        }
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      cursor: default;
+    }
 
-        /* Pro Card Style */
-        .pro-card {
-            border-top: 2px solid rgba(220, 38, 38, 0.6);
-            background: linear-gradient(180deg, rgba(31, 41, 55, 0.4) 0%, rgba(5, 5, 5, 0) 100%);
-            padding-bottom: 2rem; 
-            margin-bottom: 1rem;
-        }
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 9999;
+    }
 
-        .text-glow-red {
-            text-shadow: 0 0 15px rgba(220, 38, 38, 0.6);
-        }
-        
-        /* Bullets */
-        ul.custom-list {
-            list-style: none;
-            padding-left: 0.5rem;
-        }
-        ul.custom-list li {
-            position: relative;
-            margin-bottom: 0.6rem;
-            padding-left: 1.5rem;
-            color: #d1d5db; 
-        }
-        ul.custom-list li::before {
-            content: "▪"; 
-            color: #ef4444; 
-            font-size: 1.2em;
-            position: absolute;
-            left: 0;
-            top: -0.1rem;
-        }
-    </style>
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, #1a0008 0%, var(--black) 70%);
+    }
+
+    .hero-bg-car {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/images/Sinister_Simple.png');
+      background-size: cover;
+      background-position: center 60%;
+      opacity: 0.12;
+      filter: contrast(1.4) saturate(0);
+    }
+
+    .hero-scanline {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0,0,0,0.08) 3px,
+        rgba(0,0,0,0.08) 4px
+      );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero-logo {
+      width: clamp(140px, 22vw, 240px);
+      margin-bottom: 2.5rem;
+      filter: drop-shadow(0 0 30px var(--red-glow));
+      animation: logoPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes logoPulse {
+      0%, 100% { filter: drop-shadow(0 0 20px var(--red-glow)); }
+      50% { filter: drop-shadow(0 0 50px rgba(200,16,46,0.6)); }
+    }
+
+    .hero-eyebrow {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+      letter-spacing: 0.35em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 18vw, 13rem);
+      line-height: 0.88;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      text-shadow: 0 0 80px var(--red-glow), 0 0 3px rgba(255,255,255,0.1);
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+
+    .hero-subtitle {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.4rem, 4vw, 2.6rem);
+      letter-spacing: 0.18em;
+      color: var(--gray);
+      margin-top: 0.4rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--red);
+      margin: 2rem auto;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+      box-shadow: 0 0 12px var(--red);
+    }
+
+    .hero-tagline {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+      letter-spacing: 0.25em;
+      color: var(--light);
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.4s forwards;
+    }
+
+    .hero-scroll span {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      color: var(--gray);
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--red), transparent);
+      animation: scrollPulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(1); opacity: 1; }
+      50% { transform: scaleY(0.4); opacity: 0.4; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── ENGINE SOUND ── */
+    .sound-section {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sound-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(200,16,46,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .sound-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .sound-heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      letter-spacing: 0.08em;
+      color: var(--white);
+      margin-bottom: 2.5rem;
+    }
+
+    .engine-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-engine {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.15em;
+      padding: 1rem 3rem;
+      border: 1px solid var(--red);
+      background: transparent;
+      color: var(--red);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.25s;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    }
+
+    .btn-engine::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--red);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+    }
+
+    .btn-engine:hover { color: var(--white); }
+    .btn-engine:hover::before { transform: translateX(0); }
+    .btn-engine span { position: relative; z-index: 1; }
+
+    .btn-kill {
+      border-color: var(--gray);
+      color: var(--gray);
+    }
+    .btn-kill::before { background: var(--gray); }
+    .btn-kill:hover { color: var(--black); }
+
+    .audio-visualizer {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 40px;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .bar {
+      width: 4px;
+      background: var(--red);
+      border-radius: 2px 2px 0 0;
+      height: 4px;
+      transition: height 0.1s ease;
+      opacity: 0.6;
+    }
+
+    .bar.active {
+      animation: barAnim var(--dur, 0.6s) ease-in-out infinite alternate;
+      opacity: 1;
+    }
+
+    @keyframes barAnim {
+      from { height: 4px; }
+      to { height: var(--h, 30px); }
+    }
+
+    /* ── MAIN IMAGE ── */
+    .car-showcase {
+      position: relative;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+
+    .car-showcase img {
+      width: 100%;
+      display: block;
+      transition: transform 8s ease;
+      filter: contrast(1.05);
+    }
+
+    .car-showcase:hover img {
+      transform: scale(1.03);
+    }
+
+    .car-showcase-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, var(--black) 0%, transparent 15%, transparent 80%, var(--black) 100%);
+      pointer-events: none;
+    }
+
+    /* ── SPECS ── */
+    .specs-section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-eyebrow {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.45em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      letter-spacing: 0.06em;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .spec-card {
+      background: var(--card);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .spec-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--red);
+      transition: height 0.4s ease;
+    }
+
+    .spec-card:hover { background: #161616; }
+    .spec-card:hover::before { height: 100%; }
+
+    .spec-card-icon {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .spec-card-icon::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .spec-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+
+    .spec-list {
+      list-style: none;
+    }
+
+    .spec-list li {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--light);
+      line-height: 1.6;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+    }
+
+    .spec-list li:last-child { border-bottom: none; }
+
+    .spec-list li::before {
+      content: '—';
+      color: var(--red);
+      font-size: 0.7rem;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    /* ── PHOTO GALLERY ── */
+    .gallery-section {
+      padding: 0 0 6rem;
+    }
+
+    .gallery-header {
+      text-align: center;
+      padding: 4rem 2rem 3rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--black);
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--deep);
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.05) saturate(0.9);
+      transition: transform 0.6s ease, filter 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.07);
+      filter: contrast(1.1) saturate(1.1);
+    }
+
+    .gallery-item-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 1rem 1rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      color: var(--white);
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .gallery-item:hover .gallery-item-label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      box-shadow: 0 0 80px rgba(0,0,0,0.8);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--white);
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .lightbox-close:hover { opacity: 1; }
+
+    /* ── THANKS ── */
+    .thanks-section {
+      border-top: 1px solid var(--border);
+      padding: 5rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .thanks-list {
+      list-style: none;
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .thanks-list li {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--light);
+      flex-wrap: wrap;
+    }
+
+    .thanks-list li:last-child {
+      border-bottom: none;
+      color: var(--white);
+      font-style: italic;
+      font-size: 0.9rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    .thanks-role {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      color: var(--red);
+      text-transform: uppercase;
+      min-width: 140px;
+      text-align: right;
+    }
+
+    .thanks-name {
+      font-weight: 500;
+      color: var(--white);
+      min-width: 140px;
+      text-align: left;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+    }
+
+    footer a {
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .specs-grid { grid-template-columns: 1fr; }
+      .thanks-role, .thanks-name { min-width: unset; text-align: center; }
+    }
+  </style>
 </head>
-<body class="antialiased selection:bg-red-900 selection:text-white">
+<body>
 
-    <div class="container mx-auto px-4 py-8 max-w-7xl">
-        
-        <header class="text-center mb-10">
-           <div class="flex items-center justify-center mb-6">
-             <img src="assets/images/FordPerformance_Coyote_v1.2.png" alt="Sinister Logo" class="rounded-lg w-full md:w-1/3 h-auto object-cover opacity-90 mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/DC2626?text=SINISTER';">
-           </div>
-            
-            <h2 class="font-racing text-5xl md:text-7xl text-white mt-4 italic leading-tight tracking-tighter">
-                2019 FORD <span class="text-red-600 text-glow-red">MUSTANG GT</span>
-            </h2>
-        </header>
-        
-        <main class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-car"></div>
+    <div class="hero-scanline"></div>
+    <div class="hero-content">
+      <img
+        class="hero-logo"
+        src="assets/images/FordPerformance_Coyote_v1.2.png"
+        alt="Ford Performance Coyote Logo"
+      />
+      <p class="hero-eyebrow">GEN 3 COYOTE · 5.0L V8 · WHIPPLE 3.0L</p>
+      <h1 class="hero-title">SINISTER</h1>
+      <p class="hero-subtitle">2019 Ford Mustang GT</p>
+      <div class="hero-rule"></div>
+      <p class="hero-tagline">BUILT · BOOSTED · TUNED BY LUND RACING</p>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-            <div class="lg:col-span-3 space-y-8">
-                
-                <section class="pro-card p-5 rounded-t-xl">
-                    <h3 class="font-racing text-2xl md:text-3xl text-white mb-4">
-                        <span class="text-red-600">POWER</span>TRAIN
-                    </h3>
-                    <ul class="custom-list text-base md:text-lg">                        
-                        <li>Gen 3 Coyote 5.0L V8 w/3.0L Whipple Supercharger</li>
-                        <li>3.50" GripTec Supercharger Pulley</li>
-                        <li>132mm Billet Oval Throttle Body</li>
-                        <li>L&M Aftermarket 4 Cam Set</li>
-                        <li>Boundary Billet Oil Pump Gears & Crank Sprocket</li>
-                        <li>MMR Billet Rear Block & Bellhousing Bracing</li>
-                        <li>Performance Package Larger Radiator</li>
-                        <li>Upgraded Fuel Rails & ID1050x Injectors</li>
-                        <li>Full Corsa Xtreme Active Exhaust w/Long Tube Headers & Double H-Pipe</li>
-                        <li>Tuned by Lund Racing</li>
-                    </ul>
-                </section>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <section class="pro-card p-5 rounded-t-xl">
-                        <h3 class="font-racing text-2xl md:text-3xl text-white mb-4">
-                            <span class="text-red-600">DRIVE</span>TRAIN
-                        </h3>
-                        <ul class="custom-list text-base md:text-lg">
-                            <li>Mantic Twin Disc Ceremetallic Clutch</li>
-                            <li>QA1 Carbon Fiber Driveshaft w/Safety Loop</li> 
-                            <li>MMR Differential Cooler System</li>
-                            <li>Performance Package Torsen Differential w/3.73 Axle Ratio</li>
-                            <li>Ford Performance G-Force Axles</li>
-                            <li>MGW Short Throw Shifter w/Raceseng Knob</li>
-                        </ul>
-                    </section>
-                    
-                    <section class="pro-card p-5 rounded-t-xl">
-                        <h3 class="font-racing text-2xl md:text-3xl text-white mb-4">
-                            CHASSIS <span class="text-red-600">&</span> BRAKES
-                        </h3>
-                        <ul class="custom-list text-base md:text-lg">
-                            <li>Performance Package K-Brace, Sway Bar, Chassis Tuning</li>
-                            <li>Unique Stability Control, EPAS & ABS Tuning</li>
-                            <li>Ford Performance Lowering Springs</li>
-                            <li>BMR Rear Suspension (Cradle Lockouts, Subframe Braces, Billet Vertical Links)</li>
-                            <li>Brembo 6-Piston Front Brake Upgrade</li>
-                            <li>Steeda 2-Piece Full Floating Rotors</li>
-                        </ul>
-                    </section>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <section class="pro-card p-5 rounded-t-xl">
-                         <h3 class="font-racing text-2xl md:text-3xl text-white mb-4">
-                            COCKPIT <span class="text-red-600">&</span> AUDIO
-                        </h3>
-                         <ul class="custom-list text-base md:text-lg">
-                            <li>Custom Gauges w/Forscan Mods</li>
-                            <li>Custom Logo and Center Screen Graphics</li>
-                            <li>Sundown Audio 1,500w Class D Amp w/Matched 12" Woofers</li>
-                            <li>Themed Interior LED Lighting</li>
-                        </ul>
-                    </section>
-                    
-                    <section class="pro-card p-5 rounded-t-xl">
-                        <h3 class="font-racing text-2xl md:text-3xl text-white mb-4">
-                            AERO <span class="text-red-600">&</span> WHEELS
-                        </h3>
-                         <ul class="custom-list text-base md:text-lg">
-                            <li>Full Carbon Fiber Terminator Hood by VIS Racing</li>
-                            <li>Performance Package Rear Wing</li>
-                            <li>P51 Wheels with Nitto NT 555 G2 Tires</li>
-                            <li>The Onion Shop Paint Correction and Ceramic Coating</li>
-                        </ul>
-                    </section>
-                </div>
+  <!-- ENGINE SOUND -->
+  <section class="sound-section reveal">
+    <p class="sound-label">CORSA XTREME · LONG TUBE HEADERS · DOUBLE H-PIPE</p>
+    <h2 class="sound-heading">WHAT DOES SINISTER SOUND LIKE?</h2>
+    <div class="engine-controls">
+      <button class="btn-engine" id="startBtn"><span>▶ START ENGINE</span></button>
+      <button class="btn-engine btn-kill" id="killBtn"><span>■ KILL SWITCH</span></button>
+    </div>
+    <div class="audio-visualizer" id="visualizer">
+      <!-- bars injected by JS -->
+    </div>
+  </section>
 
-                <section class="pro-card p-5 rounded-t-xl">
-                    <h3 class="font-racing text-2xl md:text-3xl text-white mb-4">
-                        SPECIAL <span class="text-red-600">THANKS</span>
-                    </h3>
-                     <ul class="custom-list text-base md:text-lg">
-                        <li><strong class="text-white">Build:</strong> The Snake Pit</li>
-                        <li><strong class="text-white">Exhaust:</strong> Corsa Performance</li>
-                        <li><strong class="text-white">Headrests & Console:</strong> Anderson Custom Interiors</li>
-                        <li><strong class="text-white">My Family & Friends:</strong> Katie, Adam, and Derrick</li>
-                        <li><strong class="text-white">God is Great & God Bless America!</strong></li> 
-                    </ul>
-                </section>
+  <!-- HERO CAR IMAGE -->
+  <div class="car-showcase reveal">
+    <img src="assets/images/Sinister_Simple.png" alt="Sinister Mustang GT" />
+    <div class="car-showcase-overlay"></div>
+  </div>
 
-                <section class="bg-gradient-to-b from-gray-900 to-black border-t-2 border-red-800 p-8 rounded-xl shadow-2xl">
-                    <h3 class="font-racing text-2xl md:text-4xl text-white mb-6 text-center italic">
-                        WHAT DOES <span class="text-red-600">SINISTER</span> SOUND LIKE?
-                    </h3>
-                    <div class="flex flex-col sm:flex-row justify-center gap-6">
-                        <audio id="mySound" src="assets/audio/cammed_idle_audio.mp3" preload="none"></audio>
-                        
-                        <button class="group relative px-8 py-3 bg-red-700 hover:bg-red-600 text-white font-racing text-xl italic tracking-wider skew-x-[-12deg] transition-all hover:scale-105 shadow-[0_0_20px_rgba(220,38,38,0.5)]" onclick="document.getElementById('mySound').play()">
-                            <span class="block skew-x-[12deg] group-hover:text-black transition-colors">START ENGINE</span>
-                        </button>
-                        
-                        <button class="group relative px-8 py-3 bg-gray-800 hover:bg-gray-700 text-gray-400 font-racing text-xl italic tracking-wider skew-x-[-12deg] transition-all hover:scale-105 border border-gray-600" onclick="document.getElementById('mySound').pause(); document.getElementById('mySound').currentTime = 0;">
-                            <span class="block skew-x-[12deg] group-hover:text-white transition-colors">KILL SWITCH</span>
-                        </button>
-                    </div>
-                </section>
+  <!-- SPECS -->
+  <section class="specs-section">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Full Build Sheet</p>
+      <h2 class="section-title">THE HARDWARE</h2>
+    </div>
+    <div class="specs-grid reveal">
 
-            </div>
-            
-            <div class="lg:col-span-2 space-y-8 flex flex-col items-center">
-                
-                <div class="bg-transparent w-full flex justify-center">
-                    <img src="assets/images/Sinister_Simple.png" alt="Sinister Mustang front view" class="rounded-lg max-w-full w-auto h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity mx-auto"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Sinister';">
-                </div>
+      <div class="spec-card">
+        <div class="spec-card-icon">01 / Powertrain</div>
+        <h3>POWERTRAIN</h3>
+        <ul class="spec-list">
+          <li>Gen 3 Coyote 5.0L V8 w/3.0L Whipple Supercharger</li>
+          <li>3.50" GripTec Supercharger Pulley</li>
+          <li>132mm Billet Oval Throttle Body</li>
+          <li>L&amp;M Aftermarket 4 Cam Set</li>
+          <li>Boundary Billet Oil Pump Gears &amp; Crank Sprocket</li>
+          <li>MMR Billet Rear Block &amp; Bellhousing Bracing</li>
+          <li>Performance Package Larger Radiator</li>
+          <li>Upgraded Fuel Rails &amp; ID1050x Injectors</li>
+          <li>Full Corsa Xtreme Active Exhaust w/Long Tube Headers &amp; Double H-Pipe</li>
+          <li>Tuned by Lund Racing</li>
+        </ul>
+      </div>
 
-                <div class="bg-transparent w-full flex justify-center">
-                    <img src="assets/images/Engine_View.png" alt="Engine View" class="rounded-lg max-w-full w-auto h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity mx-auto"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Engine';">
-                </div>
+      <div class="spec-card">
+        <div class="spec-card-icon">02 / Drivetrain</div>
+        <h3>DRIVETRAIN</h3>
+        <ul class="spec-list">
+          <li>Mantic Twin Disc Ceremetallic Clutch</li>
+          <li>QA1 Carbon Fiber Driveshaft w/Safety Loop</li>
+          <li>MMR Differential Cooler System</li>
+          <li>Performance Package Torsen Differential w/3.73 Axle Ratio</li>
+          <li>Ford Performance G-Force Axles</li>
+          <li>MGW Short Throw Shifter w/Raceseng Knob</li>
+        </ul>
+      </div>
 
-                <div class="bg-transparent w-full flex justify-center">
-                    <img src="assets/images/Cam_Teardown.png" alt="Engine Assembly" class="rounded-lg max-w-full w-auto h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity mx-auto"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Teardown';">
-                </div>
+      <div class="spec-card">
+        <div class="spec-card-icon">03 / Chassis & Brakes</div>
+        <h3>CHASSIS &amp; BRAKES</h3>
+        <ul class="spec-list">
+          <li>Performance Package K-Brace, Sway Bar, Chassis Tuning</li>
+          <li>Unique Stability Control, EPAS &amp; ABS Tuning</li>
+          <li>Ford Performance Lowering Springs</li>
+          <li>BMR Rear Suspension (Cradle Lockouts, Subframe Braces, Billet Vertical Links)</li>
+          <li>Brembo 6-Piston Front Brake Upgrade</li>
+          <li>Steeda 2-Piece Full Floating Rotors</li>
+        </ul>
+      </div>
 
-                <div class="bg-transparent w-full flex justify-center">
-                    <img src="assets/images/Interior_View.png" alt="Interior" class="rounded-lg max-w-full w-auto h-auto object-cover shadow-2xl hover:opacity-90 transition-opacity mx-auto"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/333333?text=Interior';">
-                </div>
-            </div>
-        </main>
-        
-        <footer class="mt-12 text-center opacity-40 hover:opacity-100 transition-opacity">
-             <div style="font-size: x-small; color: #6b7280;">Some fonts from <a href="https://www.onlinewebfonts.com/icon" class="hover:text-red-500 transition-colors">svg icons</a> licensed by CC BY 4.0</div>
-        </footer>
+      <div class="spec-card">
+        <div class="spec-card-icon">04 / Cockpit</div>
+        <h3>COCKPIT &amp; AUDIO</h3>
+        <ul class="spec-list">
+          <li>Custom Gauges w/Forscan Mods</li>
+          <li>Custom Logo and Center Screen Graphics</li>
+          <li>Sundown Audio 1,500w Class D Amp w/Matched 12" Woofers</li>
+          <li>Themed Interior LED Lighting</li>
+        </ul>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-card-icon">05 / Aero & Wheels</div>
+        <h3>AERO &amp; WHEELS</h3>
+        <ul class="spec-list">
+          <li>Full Carbon Fiber Terminator Hood by VIS Racing</li>
+          <li>Performance Package Rear Wing</li>
+          <li>P51 Wheels with Nitto NT 555 G2 Tires</li>
+          <li>The Onion Shop Paint Correction and Ceramic Coating</li>
+        </ul>
+      </div>
 
     </div>
-</body>
-</html>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <div class="gallery-header reveal">
+      <p class="section-eyebrow">Visual Documentation</p>
+      <h2 class="section-title">THE BUILD</h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="assets/images/Engine_View.png" alt="Engine Bay" loading="lazy" />
+        <div class="gallery-item-label">Engine Bay</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)
