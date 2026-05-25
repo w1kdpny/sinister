@@ -365,10 +365,16 @@
 
     .specs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .specs-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .spec-card {
@@ -633,7 +639,6 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .gallery-grid { grid-template-columns: 1fr; }
-      .specs-grid { grid-template-columns: 1fr; }
       .thanks-role, .thanks-name { min-width: unset; text-align: center; }
     }
   </style>
@@ -702,7 +707,6 @@
           <li>Performance Package Larger Radiator</li>
           <li>Upgraded Fuel Rails &amp; ID1050x Injectors</li>
           <li>Full Corsa Xtreme Active Exhaust w/Long Tube Headers &amp; Double H-Pipe</li>
-          <li>Tuned by Lund Racing</li>
         </ul>
       </div>
 
@@ -754,8 +758,19 @@
         </ul>
       </div>
 
-    </div>
-  </section>
+      <div class="spec-card">
+        <div class="spec-card-icon">06 / Performance</div>
+        <h3>PERFORMANCE NUMBERS</h3>
+        <ul class="spec-list">
+          <li>~775 Wheel Horsepower / 93 Octane</li>
+          <li>~13 PSI Boost</li>
+          <li>Tuned by Lund Racing</li>
+          <li>*Estimated figures</li>
+        </ul>
+      </div>
+
+    </div><!-- /specs-grid -->
+  </section><!-- /specs-section -->
 
   <!-- GALLERY -->
   <section class="gallery-section">
