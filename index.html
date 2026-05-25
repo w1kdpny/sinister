@@ -4,10 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SINISTER — 2019 Ford Mustang GT</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NK99FQVSGV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NK99FQVSGV');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'Chiller';
+      src: url('font/chiller.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
     :root {
       --black: #080808;
       --deep: #0e0e0e;
@@ -111,10 +125,10 @@
     }
 
     .hero-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(5rem, 18vw, 13rem);
+      font-family: 'Chiller', 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 16vw, 12rem);
       line-height: 0.88;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       color: var(--white);
       text-shadow: 0 0 80px var(--red-glow), 0 0 3px rgba(255,255,255,0.1);
       opacity: 0;
@@ -153,8 +167,8 @@
     .hero-scroll {
       position: absolute;
       bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
+      right: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -351,10 +365,16 @@
 
     .specs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .specs-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .spec-card {
@@ -455,6 +475,15 @@
       aspect-ratio: 4/3;
       background: var(--deep);
       cursor: pointer;
+    }
+
+    .gallery-item.full-width {
+      aspect-ratio: unset;
+    }
+
+    .gallery-item.full-width img {
+      height: auto;
+      width: 100%;
     }
 
     .gallery-item img {
@@ -619,8 +648,9 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .gallery-grid { grid-template-columns: 1fr; }
-      .specs-grid { grid-template-columns: 1fr; }
       .thanks-role, .thanks-name { min-width: unset; text-align: center; }
+      .spec-list li { font-size: 0.95rem; }
+      .spec-card h3 { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -688,7 +718,6 @@
           <li>Performance Package Larger Radiator</li>
           <li>Upgraded Fuel Rails &amp; ID1050x Injectors</li>
           <li>Full Corsa Xtreme Active Exhaust w/Long Tube Headers &amp; Double H-Pipe</li>
-          <li>Tuned by Lund Racing</li>
         </ul>
       </div>
 
@@ -740,8 +769,19 @@
         </ul>
       </div>
 
-    </div>
-  </section>
+      <div class="spec-card">
+        <div class="spec-card-icon">06 / Performance</div>
+        <h3>PERFORMANCE NUMBERS</h3>
+        <ul class="spec-list">
+          <li>~775 Wheel Horsepower / 93 Octane</li>
+          <li>~13 PSI Boost</li>
+          <li>Tuned by Lund Racing</li>
+          <li>Estimated figures</li>
+        </ul>
+      </div>
+
+    </div><!-- /specs-grid -->
+  </section><!-- /specs-section -->
 
   <!-- GALLERY -->
   <section class="gallery-section">
@@ -758,8 +798,8 @@
         <img src="assets/images/Cam_Teardown.png" alt="Cam Assembly" loading="lazy" />
         <div class="gallery-item-label">Cam Assembly</div>
       </div>
-      <div class="gallery-item" onclick="openLightbox(this)" style="grid-column: 1 / -1;">
-        <img src="assets/images/Interior_View.png" alt="Interior" loading="lazy" style="aspect-ratio: unset; height: 400px; object-fit: cover;" />
+      <div class="gallery-item full-width" onclick="openLightbox(this)" style="grid-column: 1 / -1;">
+        <img src="assets/images/Interior_View.png" alt="Interior" loading="lazy" />
         <div class="gallery-item-label">Interior</div>
       </div>
     </div>
